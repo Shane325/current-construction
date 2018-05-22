@@ -1,5 +1,5 @@
 {
-  "name": "current-construction-node",
+  "name": "current-construction",
   "version": "1.0.0",
   "description": "Current Construction website built using nodejs.",
   "main": "server.js",
@@ -14,7 +14,7 @@
     "development"
   ],
   "dependencies": {
-    "ejs": "1.0.0",
+    "ejs": "2.5.5",
     "express": "4.6.1",
     "lodash": "^4.17.10",
     "serve-favicon": "^2.5.0"
