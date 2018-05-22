@@ -20,7 +20,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build docker image
-          command: docker build -t current-construction -f .
+          command: docker build -t current-construction .
       - run:
           name: Start docker container
           command: docker run -d -p 80:8080 --name current-construction current-construction 
