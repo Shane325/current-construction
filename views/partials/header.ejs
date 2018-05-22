@@ -1,0 +1,81 @@
+<header id="header" class="sticky-style-2">
+    <div class="container clearfix">
+        <div id="logo">
+            <a href="/" class="standard-logo"><img src="/images/logo.png" alt="Current Construction Logo"></a>
+            <a href="/" class="retina-logo"><img src="/images/logo.png" alt="Current Construction Logo"></a>
+        </div>
+        <ul class="header-extras">
+            <li>
+                <i class="i-plain icon-call nomargin"></i>
+                <div class="he-text">
+                    Call Us
+                    <span>+1(415) 969-6915</span>
+                </div>
+            </li>
+            <li>
+                <i class="i-plain icon-line2-envelope nomargin"></i>
+                <div class="he-text">
+                    Email Us
+                    <span>info@currentcon.com</span>
+                </div>
+            </li>
+            <li>
+                <i class="i-plain icon-line-clock nomargin"></i>
+                <div class="he-text">
+                    We're Open
+                    <span>Mon - Fri, 9AM to 5PM</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="header-wrap">
+        <nav id="primary-menu" class="with-arrows style-2 center">
+            <div class="container clearfix">
+                <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+                <ul>
+                    <li class="<% if(state === 'home') { %>current<% } %>">
+                        <a href="/">
+                            <div>Home</div>
+                        </a>
+                    </li>
+                    <li class="<% if(state === 'about') { %>current<% } %>">
+                        <a href="/about">
+                            <div>About Us</div>
+                        </a>
+                    </li>
+                    <li class="<% if(state === 'services') { %>current<% } %>">
+                        <a href="/services">
+                            <div>Services</div>
+                        </a>
+                    </li>
+                    <li class="<% if(state === 'projects' || state === 'project') { %>current<% } %>">
+                        <a href="/projects">
+                            <div>Projects</div>
+                        </a>
+                        <ul>
+                            <% projects.forEach(function(project) { %>
+                                <li>
+                                    <a href="/project/<%=project.id %>">
+                                        <div>
+                                            <%=project.name %>
+                                        </div>
+                                    </a>
+                                </li>
+                                <% }) %>
+                        </ul>
+                    </li>
+                    <li class="<% if(state === 'estimate') { %>current<% } %>">
+                        <a href="/estimate">
+                            <div>Get an Estimate</div>
+                        </a>
+                    </li>
+                    <li class="<% if(state === 'contact') { %>current<% } %>">
+                        <a href="/contact">
+                            <div>Contact</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

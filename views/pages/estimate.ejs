@@ -1,0 +1,30 @@
+<!DOCTYPE html> <!-- HTML5 -->
+
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="stretched">
+    <div id="wrapper" class="clearfix">
+        <% include ../components/core/top-bar %>
+            <% include ../partials/header %>
+                <% include ../components/core/title %>
+                    <section id="content">
+                        <div class="content-wrap">
+                            <div class="container clearfix">
+                                <h2 class="text-center">Request a Free Estimate</h2>
+                                <p class="text-center">Please fill out and submit the following form to
+                                    get a free estimate from Current Construction.</p>
+                                <div class="divider divider-short divider-rounded divider-center"><i class="icon-pencil"></i></div>
+                                <% include ../components/forms/estimate-form %>
+                            </div>
+                        </div>
+                    </section>
+                    <% include ../partials/footer %>
+    </div>
+    <% include ../partials/foot %>
+</body>
+
+</html>

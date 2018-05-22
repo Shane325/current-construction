@@ -1,0 +1,30 @@
+<!DOCTYPE html> <!-- HTML5 -->
+
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="stretched">
+    <div id="wrapper" class="clearfix">
+        <% include ../components/core/top-bar %>
+            <% include ../partials/header %>
+                <% include ../components/core/title %>
+                    <section id="content">
+                        <div class="content-wrap">
+                            <div class="container clearfix">
+                                <% include ../components/projects/projects-menu %>
+                                    <div class="clear"></div>
+                                    <div id="portfolio" class="portfolio grid-container portfolio-3 clearfix">
+                                      <% include ../components/projects/projects-portfolio %>
+                                    </div>
+                            </div>
+                        </div>
+                    </section>
+                    <% include ../partials/footer %>
+    </div>
+    <% include ../partials/foot %>
+</body>
+
+</html>

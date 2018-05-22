@@ -1,0 +1,26 @@
+<!DOCTYPE html> <!-- HTML5 -->
+
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="stretched">
+    <div id="wrapper" class="clearfix">
+        <% include ../components/core/top-bar.ejs %>
+            <% include ../partials/header %>
+                <% include ../components/home/slider %>
+                    <section id="content">
+                        <div class="content-wrap">
+                            <% include ../components/core/banner-full %>
+                                <% include ../components/core/services-1 %>
+                                    <% include ../components/core/testimonial-lg %>
+                                        <% include ../components/core/services-icons-1 %>
+                        </div>
+                    </section>
+                    <% include ../partials/footer %>
+    </div>
+
+    <% include ../partials/foot %>
+</body>

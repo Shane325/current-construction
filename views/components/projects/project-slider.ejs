@@ -1,0 +1,11 @@
+<div class="col_full portfolio-single-image">
+    <div class="fslider" data-arrows="true" data-animation="slide">
+        <div class="flexslider">
+            <div class="slider-wrap">
+                <% project.img.forEach(function(item) { %>
+                    <div class="slide"><a href="#"><img src="<%=item.src %>" alt="<%=item.alt %>"></a></div>
+                    <% }) %>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="col_half">
+    <div class="card events-meta">
+        <div class="card-body">
+            <ul class="portfolio-meta nobottommargin">
+                <li><span><i class="icon-wrench"></i>Project name:</span>
+                    <%=project.name %>
+                </li>
+                <li><span><i class="icon-calendar3"></i>Duration:</span>
+                    <%=project.duration %>
+                </li>
+                <li><span><i class="icon-money"></i>Project type:</span>
+                    <%=project.type%>
+                </li>
+                <li><span><i class="icon-cogs"></i>Architect / Engineer:</span>
+                    <a href="<%=project.architectOrEngineer.url %>" target="_blank" rel="noopener noreferrer">
+                        <%=project.architectOrEngineer.name %>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

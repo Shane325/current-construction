@@ -1,0 +1,27 @@
+<section id="page-title" class="page-title-pattern">
+    <div class="container clearfix">
+        <h1>
+            <% if(state === 'project'){ %>
+                <%=project.name %>
+                    <% } else { %>
+                        <%= title.text %>
+                            <% } %>
+        </h1>
+        <span><%= title.subtext %></span>
+        <ol class="breadcrumb">
+            <% title.menu.forEach(function(item) { %>
+                <% if(item.url === null) { %>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <%= item.name %>
+                    </li>
+                    <% } else { %>
+                        <li class="breadcrumb-item">
+                            <a href="<%= item.url %>">
+                                <%= item.name %>
+                            </a>
+                        </li>
+                        <% } %>
+                            <% }) %>
+        </ol>
+    </div>
+</section>
