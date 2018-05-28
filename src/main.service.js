@@ -20,4 +20,3 @@ module.exports.getProjectById = ((req, res, next, projectId) => {
   next();
 });
 
-

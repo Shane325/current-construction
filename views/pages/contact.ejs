@@ -1,4 +1,5 @@
-<!DOCTYPE html> <!-- HTML5 -->
+<!DOCTYPE html>
+<!-- HTML5 -->
 
 <html lang="en">
 
@@ -15,7 +16,12 @@
                         <div class="content-wrap">
                             <div class="container clearfix">
                                 <div class="col_half">
-                                    <% include ../components/forms/contact-form %>
+                                    <% if(status && status === 'success') { %>
+                                        <%include ../components/forms/success %>
+                                            <% } else if (status && status === 'error') { %>
+                                                <%include ../components/forms/error %>
+                                                    <% } %>
+                                                        <% include ../components/forms/contact-form %>
                                 </div>
                                 <div class="col_half col_last">
                                     <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=11&center=37.7749%2C-122.4194&key=AIzaSyB3AM8EJpFit_9T5G2HLMbgQD1sBuKWJ-M"
