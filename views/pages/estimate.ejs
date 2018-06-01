@@ -1,4 +1,5 @@
-<!DOCTYPE html> <!-- HTML5 -->
+<!DOCTYPE html>
+<!-- HTML5 -->
 
 <html lang="en">
 
@@ -14,11 +15,18 @@
                     <section id="content">
                         <div class="content-wrap">
                             <div class="container clearfix">
-                                <h2 class="text-center">Request a Free Estimate</h2>
-                                <p class="text-center">Please fill out and submit the following form to
-                                    get a free estimate from Current Construction.</p>
-                                <div class="divider divider-short divider-rounded divider-center"><i class="icon-pencil"></i></div>
-                                <% include ../components/forms/estimate-form %>
+                                <% if(status && status === 'success') { %>
+                                    <%include ../components/forms/success %>
+                                        <% } else if (status && status === 'error') { %>
+                                            <%include ../components/forms/error %>
+                                                <% } %>
+                                                    <h2 class="text-center">Request a Free Estimate</h2>
+                                                    <p class="text-center">Please fill out and submit
+                                                        the following form to get
+                                                        a free estimate from Current
+                                                        Construction.</p>
+                                                    <div class="divider divider-short divider-rounded divider-center"><i class="icon-pencil"></i></div>
+                                                    <% include ../components/forms/estimate-form %>
                             </div>
                         </div>
                     </section>

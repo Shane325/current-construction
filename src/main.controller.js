@@ -1,8 +1,10 @@
 'use strict'
-
 /*
  * Module dependencies
  */
+let path = require('path')
+let _ = require('lodash')
+let config = require('./config/config')
 let homeConfig = require('./config/home')
 let aboutConfig = require('./config/about')
 let servicesConfig = require('./config/services')
@@ -11,11 +13,12 @@ let contactConfig = require('./config/contact')
 let projectsConfig = require('./config/projects')
 let projectConfig = require('./config/project')
 let HttpStatus = require('http-status-codes')
-let api_key = 'key-9a0c214f6a86608897a7ba6d8a14816a'
-let domain = 'mg.currentcon.com'
+let MAILGUN_API_KEY = config.mailgun.api_key
+let MAILGUN_DOMAIN = config.mailgun.domain
+let MAILGUN_EMAIL = config.mailgun.email
 let mailgun = require('mailgun-js')({
-  apiKey: api_key,
-  domain: domain
+  apiKey: MAILGUN_API_KEY,
+  domain: MAILGUN_DOMAIN
 })
 
 /*
@@ -25,6 +28,8 @@ let mailgun = require('mailgun-js')({
  */
 module.exports.getHome = (req, res) => {
   res.render('../views/pages/index', {
+    css: config.lib.css,
+    js: config.lib.js,
     pageTitle: homeConfig.pageTitle,
     state: homeConfig.state,
     projects: projectsConfig.projects
@@ -38,6 +43,8 @@ module.exports.getHome = (req, res) => {
  */
 module.exports.getAbout = (req, res) => {
   res.render('../views/pages/about', {
+    css: config.lib.css,
+    js: config.lib.js,
     pageTitle: aboutConfig.pageTitle,
     state: aboutConfig.state,
     title: aboutConfig.title,
@@ -52,6 +59,8 @@ module.exports.getAbout = (req, res) => {
  */
 module.exports.getServices = (req, res) => {
   res.render('../views/pages/services', {
+    css: config.lib.css,
+    js: config.lib.js,
     pageTitle: servicesConfig.pageTitle,
     state: servicesConfig.state,
     title: servicesConfig.title,
@@ -66,6 +75,9 @@ module.exports.getServices = (req, res) => {
  */
 module.exports.getEstimate = (req, res) => {
   res.render('../views/pages/estimate', {
+    css: config.lib.css,
+    js: config.lib.js,
+    status: req.query.status || null,
     pageTitle: estimateConfig.pageTitle,
     state: estimateConfig.state,
     title: estimateConfig.title,
@@ -80,11 +92,15 @@ module.exports.getEstimate = (req, res) => {
  */
 module.exports.getContact = (req, res) => {
   res.render('../views/pages/contact', {
+    css: config.lib.css,
+    js: config.lib.js,
     status: req.query.status || null,
     pageTitle: contactConfig.pageTitle,
     state: contactConfig.state,
     title: contactConfig.title,
-    projects: projectsConfig.projects
+    projects: projectsConfig.projects,
+    domain: config.domain,
+    port: config.port
   })
 }
 
@@ -95,6 +111,8 @@ module.exports.getContact = (req, res) => {
  */
 module.exports.getProjects = (req, res) => {
   res.render('../views/pages/projects', {
+    css: config.lib.css,
+    js: config.lib.js,
     pageTitle: projectsConfig.pageTitle,
     state: projectsConfig.state,
     title: projectsConfig.title,
@@ -109,6 +127,8 @@ module.exports.getProjects = (req, res) => {
  */
 module.exports.getProject = (req, res) => {
   res.render('../views/pages/project', {
+    css: config.lib.css,
+    js: config.lib.js,
     pageTitle: projectConfig.pageTitle,
     state: projectConfig.state,
     title: projectConfig.title,
@@ -124,7 +144,7 @@ module.exports.getProject = (req, res) => {
 module.exports.sendContactEmail = (req, res, next) => {
   var data = {
     from: req.body.email,
-    to: 'shane@buildeasyapp.com',
+    to: MAILGUN_EMAIL,
     subject: req.body.name + ' sent a message from www.currentcon.com',
     text: req.body.message
   }
@@ -137,4 +157,60 @@ module.exports.sendContactEmail = (req, res, next) => {
     res.status(HttpStatus.OK)
     res.send('ok')
   })
+}
+
+/*
+ * Send estimate email
+ *
+ */
+module.exports.sendEstimateEmail = (req, res, next) => {
+  var data = {
+    from: req.body.email,
+    to: MAILGUN_EMAIL,
+    subject: 'Estimate Request',
+    text: getEstimateBody(req.body)
+  }
+
+  mailgun.messages().send(data, (error, body) => {
+    if (error) {
+      return next(error)
+    }
+
+    res.status(HttpStatus.OK)
+    res.send('ok')
+  })
+}
+
+function getEstimateBody (body) {
+  let newLine = '\n'
+  let line1 = body.name + ' has requested an estimate using the Current Construction website form.'
+  let line2 = 'Name: ' + body.name
+  let line3 = 'Email: ' + body.email
+  let line4 = 'Phone: ' + (body.phone || '')
+  let line5 = 'City: ' + (body.city || '')
+  let line6 = 'State: ' + (body.state || '')
+  let line7 = 'Zip: ' + (body.zip || '')
+
+  let line8 = 'Project type: ' + (body.projectType || '')
+  let line9 = 'Project areas: ' + (getProjectAreas(body.projectAreas) || '')
+  let line10 = 'Project description: ' + (body.description || '')
+  let line11 = 'Do you have plans?: ' + (body.plans || '')
+  let line12 = 'Approximate property size: ' + (body.propertySize || '')
+  let line13 = 'Approximate project budget: ' + (body.budget || '')
+
+  return _.concat(line1, newLine, line2, line3, line4, line5, line6, line7, newLine, line8, line9, line10, line11, line12, line13)
+}
+
+function getProjectAreas (areas) {
+  if (areas && areas.length > 0) {
+    let allAreas = ''
+
+    areas.forEach(function (area) {
+      allAreas = allAreas + ' ' + area
+    })
+
+    return allAreas
+  } else {
+    return null
+  }
 }

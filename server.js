@@ -9,7 +9,8 @@ let router = require('./src/main.routes')
 let path = require('path')
 let favicon = require('serve-favicon')
 let bodyParser = require('body-parser')
-const port = process.env.PORT || 8080
+let config = require('./src/config/config')
+const port = process.env.PORT || config.port
 
 // Serve favicon
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')))
@@ -24,7 +25,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({
   extended: true
 }))
-app.use(bodyParser.json())
+app.use(bodyParser.text())
 
 // Apply application routes
 app.use(router)
