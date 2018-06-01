@@ -25,7 +25,6 @@ router.param('projectId', service.getProjectById)
 
 // Middleware to handle errors
 router.use((err, req, res, next) => {
-  console.log(err)
   res.render('../views/partials/error', {
     css: config.lib.css,
     js: config.lib.js,
