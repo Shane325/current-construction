@@ -16,5 +16,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 80 443 8443
-CMD [ "gulp", "prod" ]
+CMD [ "npm", "run", "start:prod" ]
 
