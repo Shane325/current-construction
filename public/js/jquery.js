@@ -4,17 +4,17 @@ $(document).ready(function () {
   // bind 'myForm' and provide a simple callback function
   $('#contactform').ajaxForm(function (responseText) {
     if (responseText === 'ok') {
-      window.location.replace('http://localhost:8443/contact?status=success')
+      window.location.replace('http://www.currentcon.com/contact?status=success')
     } else {
-      window.location.replace('http://localhost:8443/contact?status=error')
+      window.location.replace('http://www.currentcon.com/contact?status=error')
     }
   })
 
   $('#estimateForm').ajaxForm(function (responseText) {
     if (responseText === 'ok') {
-      window.location.replace('http://localhost:8443/estimate?status=success')
+      window.location.replace('http://www.currentcon.com/estimate?status=success')
     } else {
-      window.location.replace('http://localhost:8443/estimate?status=error')
+      window.location.replace('http://www.currentcon.com/estimate?status=error')
     }
   })
 })

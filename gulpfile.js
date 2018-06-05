@@ -68,9 +68,9 @@ gulp.task('clean', function () {
 })
 
 // Default task
-gulp.task('default', ['clean'], function () {
-  gulp.start('styles', 'scripts', 'images')
-})
+// gulp.task('default', ['clean'], function () {
+//  gulp.start('styles', 'scripts', 'images')
+// })
 
 // Run the project in production mode
 gulp.task('prod', function (done) {
