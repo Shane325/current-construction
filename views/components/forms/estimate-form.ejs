@@ -16,20 +16,22 @@
             <div class="form-row">
                 <div class="col-md-4">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="New Home Construction" id="newHomeConstruction" name="projectAreas[0]">
+                        <input class="form-check-input" type="checkbox" value="New Home Construction" id="newHomeConstruction"
+                            name="projectAreas[0]">
                         <label class="form-check-label" for="newHomeConstruction">
                             New Home Construction 
                           </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Multi-unit Remodel"
-                            id="multiUnitRemodel" name="projectAreas[1]">
+                        <input class="form-check-input" type="checkbox" value="Multi-unit Remodel" id="multiUnitRemodel"
+                            name="projectAreas[1]">
                         <label class="form-check-label" for="multiUnitRemodel">
                             Multi-unit Remodel 
                           </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Commercial Remodel" id="commercialRemodel" name="projectAreas[2]">
+                        <input class="form-check-input" type="checkbox" value="Commercial Remodel" id="commercialRemodel"
+                            name="projectAreas[2]">
                         <label class="form-check-label" for="commercialRemodel">
                             Commercial Remodel 
                           </label>
@@ -37,7 +39,8 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Residential Remodel" id="residentialRemodel" name="projectAreas[3]">
+                        <input class="form-check-input" type="checkbox" value="Residential Remodel" id="residentialRemodel"
+                            name="projectAreas[3]">
                         <label class="form-check-label" for="residentialRemodel">
                             Residential Remodel 
                           </label>
@@ -49,19 +52,31 @@
                           Soft Story and Structural Upgrade
                           </label>
                     </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Framing" id="framing" name="projectAreas[5]">
+                        <label class="form-check-label" for="framing">
+                          Framing
+                          </label>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="ADU Conversion"
-                            id="aduConversion" name="projectAreas[5]">
+                        <input class="form-check-input" type="checkbox" value="ADU Conversion" id="aduConversion"
+                            name="projectAreas[6]">
                         <label class="form-check-label" for="aduConversion">
                             ADU Conversion 
                           </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="Kitchen Remodel" id="kitchenRemodel">
-                        <label class="form-check-label" for="kitchenRemodel" name="projectAreas[6]">
+                        <label class="form-check-label" for="kitchenRemodel" name="projectAreas[7]">
                             Kitchen Remodel
+                          </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Bathroom Remodel" id="bathroomRemodel">
+                        <label class="form-check-label" for="bathroomRemodel" name="projectAreas[8]">
+                            Bathroom Remodel
                           </label>
                     </div>
                 </div>
@@ -72,11 +87,13 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name"
+                required>
         </div>
         <div class="form-group col-md-4">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+            <input type="email" class="form-control" id="email" placeholder="Email" name="email"
+                required>
         </div>
         <div class="form-group col-md-4">
             <label for="phone">Phone</label>
@@ -170,25 +187,29 @@
         <div class="form-group col-md-6">
             <label for="size">Approximate Property Size</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="propertySize" value="less than 1000 sq/ft" id="lessThan1000">
+                <input class="form-check-input" type="radio" name="propertySize" value="less than 1000 sq/ft"
+                    id="lessThan1000">
                 <label class="form-check-label" for="lessThan1000">
                           less than 1000 sq/ft
                         </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="propertySize" value="1000 - 2500 sq/ft" id="level1">
+                <input class="form-check-input" type="radio" name="propertySize" value="1000 - 2500 sq/ft"
+                    id="level1">
                 <label class="form-check-label" for="level1">
                           1000 - 2500 sq/ft
                         </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="propertySize" value="2500 - 5000 sq/ft" id="level2">
+                <input class="form-check-input" type="radio" name="propertySize" value="2500 - 5000 sq/ft"
+                    id="level2">
                 <label class="form-check-label" for="level2">
                           2500 - 5000 sq/ft
                         </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="propertySize" value="More than 5000 sq/ft" id="level3">
+                <input class="form-check-input" type="radio" name="propertySize" value="More than 5000 sq/ft"
+                    id="level3">
                 <label class="form-check-label" for="level3">
                           More than 5000 sq/ft 
                         </label>
@@ -197,25 +218,29 @@
         <div class="form-group col-md-6">
             <label for="budget">Approximate Project Budget</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="budget" value="$10,000 - $50,000" id="budget2">
+                <input class="form-check-input" type="radio" name="budget" value="$10,000 - $50,000"
+                    id="budget2">
                 <label class="form-check-label" for="budget2">
                           $10,000 - $50,000 
                         </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="budget" value="$50,000 - $100,000" id="budget3">
+                <input class="form-check-input" type="radio" name="budget" value="$50,000 - $100,000"
+                    id="budget3">
                 <label class="form-check-label" for="budget3">
                           $50,000 - $100,000 
                         </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="budget" value="$100,000 - $200,000" id="budget3">
+                <input class="form-check-input" type="radio" name="budget" value="$100,000 - $200,000"
+                    id="budget3">
                 <label class="form-check-label" for="budget4">
                           $100,000 - $200,000 
                         </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="budget" value="More than $200,000" id="budget4">
+                <input class="form-check-input" type="radio" name="budget" value="More than $200,000"
+                    id="budget4">
                 <label class="form-check-label" for="budget5">
                           More than $200,000 
                         </label>
