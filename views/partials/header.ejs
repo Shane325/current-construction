@@ -53,15 +53,82 @@
                             <div>Projects</div>
                         </a>
                         <ul>
-                            <% projects.forEach(function(project) { %>
-                                <li>
-                                    <a href="/project/<%=project.id %>">
-                                        <div>
-                                            <%=project.name %>
-                                        </div>
-                                    </a>
-                                </li>
-                                <% }) %>
+                            <li>
+                                <a href="/projects">
+                                    <div>Commercial</div>
+                                </a>
+                                <ul>
+                                    <% var commercial = projects.filter(function(project) { %>
+                                        <% return project.categories === 'project-commercial' %>
+                                            <% }) %>
+                                                <% commercial.forEach(function(project) { %>
+                                                    <li>
+                                                        <a href="/project/<%=project.id %>">
+                                                            <div>
+                                                                <%=project.name %>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <% }) %>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/projects">
+                                    <div>Residential</div>
+                                </a>
+                                <ul>
+                                    <% var residential = projects.filter(function(project) { %>
+                                        <% return project.categories === 'project-residential' %>
+                                            <% }) %>
+                                                <% residential.forEach(function(project) { %>
+                                                    <li>
+                                                        <a href="/project/<%=project.id %>">
+                                                            <div>
+                                                                <%=project.name %>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <% }) %>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/projects">
+                                    <div>Structural</div>
+                                </a>
+                                <ul>
+                                    <% var structural = projects.filter(function(project) { %>
+                                        <% return project.categories === 'project-structural' %>
+                                            <% }) %>
+                                                <% structural.forEach(function(project) { %>
+                                                    <li>
+                                                        <a href="/project/<%=project.id %>">
+                                                            <div>
+                                                                <%=project.name %>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <% }) %>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/projects">
+                                    <div>Multi-Unit</div>
+                                </a>
+                                <ul>
+                                    <% var multiUnit = projects.filter(function(project) { %>
+                                        <% return project.categories === 'project-multi-unit' %>
+                                            <% }) %>
+                                                <% multiUnit.forEach(function(project) { %>
+                                                    <li>
+                                                        <a href="/project/<%=project.id %>">
+                                                            <div>
+                                                                <%=project.name %>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <% }) %>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <li class="<% if(state === 'estimate') { %>current<% } %>">
