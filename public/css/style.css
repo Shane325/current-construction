@@ -1255,7 +1255,7 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content { display: block; 
 
 #primary-menu ul ul > li.sub-menu > a,
 #primary-menu ul ul > li.sub-menu:hover > a {
-	background-image: url("images/icons/submenu.png");
+	background-image: url("http://assets.currentcon.com/submenu.png");
 	background-position: right center;
 	background-repeat: no-repeat;
 }
