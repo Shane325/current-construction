@@ -30,6 +30,7 @@ module.exports.getHome = (req, res) => {
   res.render('../views/pages/index', {
     css: config.lib.css,
     js: config.lib.js,
+    assets: config.assets,
     pageTitle: homeConfig.pageTitle,
     state: homeConfig.state,
     projects: projectsConfig.projects
@@ -45,6 +46,7 @@ module.exports.getAbout = (req, res) => {
   res.render('../views/pages/about', {
     css: config.lib.css,
     js: config.lib.js,
+    assets: config.assets,
     pageTitle: aboutConfig.pageTitle,
     state: aboutConfig.state,
     title: aboutConfig.title,
@@ -61,6 +63,7 @@ module.exports.getServices = (req, res) => {
   res.render('../views/pages/services', {
     css: config.lib.css,
     js: config.lib.js,
+    assets: config.assets,
     pageTitle: servicesConfig.pageTitle,
     state: servicesConfig.state,
     title: servicesConfig.title,
@@ -77,6 +80,7 @@ module.exports.getEstimate = (req, res) => {
   res.render('../views/pages/estimate', {
     css: config.lib.css,
     js: config.lib.js,
+    assets: config.assets,
     status: req.query.status || null,
     pageTitle: estimateConfig.pageTitle,
     state: estimateConfig.state,
@@ -94,6 +98,7 @@ module.exports.getContact = (req, res) => {
   res.render('../views/pages/contact', {
     css: config.lib.css,
     js: config.lib.js,
+    assets: config.assets,
     status: req.query.status || null,
     pageTitle: contactConfig.pageTitle,
     state: contactConfig.state,
@@ -113,6 +118,7 @@ module.exports.getProjects = (req, res) => {
   res.render('../views/pages/projects', {
     css: config.lib.css,
     js: config.lib.js,
+    assets: config.assets,
     pageTitle: projectsConfig.pageTitle,
     state: projectsConfig.state,
     title: projectsConfig.title,
@@ -129,6 +135,7 @@ module.exports.getProject = (req, res) => {
   res.render('../views/pages/project', {
     css: config.lib.css,
     js: config.lib.js,
+    assets: config.assets,
     pageTitle: projectConfig.pageTitle,
     state: projectConfig.state,
     title: projectConfig.title,
