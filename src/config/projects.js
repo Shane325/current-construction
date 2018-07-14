@@ -274,7 +274,7 @@ module.exports = {
       subtext: 'San Francisco, California',
       categories: 'project-commercial',
       portfolioImg: {
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/2630-mission-cover.jpg',
         alt: 'Mission street img'
       },
       duration: '',
@@ -285,16 +285,28 @@ module.exports = {
       },
       info: '',
       img: [{
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/2630-mission-1.jpg',
         alt: 'Mission img 1'
       },
       {
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/2630-mission-2.jpg',
         alt: 'Mission img 2'
       },
       {
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/2630-mission-3.jpg',
         alt: 'Mission img 3'
+      },
+      {
+        src: assets + '/2630-mission-4.jpg',
+        alt: 'Mission img 4'
+      },
+      {
+        src: assets + '/2630-mission-5.jpg',
+        alt: 'Mission img 5'
+      },
+      {
+        src: assets + '/2630-mission-6.jpg',
+        alt: 'Mission img 6'
       }
       ]
     },
@@ -304,7 +316,7 @@ module.exports = {
       subtext: 'San Francisco, California',
       categories: 'project-commercial',
       portfolioImg: {
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/market-cover.jpg',
         alt: 'Market street img'
       },
       duration: '',
@@ -315,16 +327,32 @@ module.exports = {
       },
       info: '',
       img: [{
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/market-1.jpg',
         alt: 'Market img 1'
       },
       {
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/market-2.jpg',
         alt: 'Market img 2'
       },
       {
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/market-3.jpg',
         alt: 'Market img 3'
+      },
+      {
+        src: assets + '/market-4.jpg',
+        alt: 'Market img 4'
+      },
+      {
+        src: assets + '/market-5.jpg',
+        alt: 'Market img 5'
+      },
+      {
+        src: assets + '/market-6.jpg',
+        alt: 'Market img 6'
+      },
+      {
+        src: assets + '/market-7.jpg',
+        alt: 'Market img 7'
       }
       ]
     },
@@ -334,7 +362,7 @@ module.exports = {
       subtext: 'Oakland, California',
       categories: 'project-multi-unit',
       portfolioImg: {
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/2nd-avenue-cover.jpg',
         alt: '2nd ave img'
       },
       duration: '',
@@ -345,16 +373,36 @@ module.exports = {
       },
       info: '',
       img: [{
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/2nd-avenue-1.jpg',
         alt: '2nd ave img 1'
       },
       {
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/2nd-avenue-2.jpg',
         alt: '2nd ave img 2'
       },
       {
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/2nd-avenue-3.jpg',
         alt: '2nd ave img 3'
+      },
+      {
+        src: assets + '/2nd-avenue-4.jpg',
+        alt: '2nd ave img 4'
+      },
+      {
+        src: assets + '/2nd-avenue-5.jpg',
+        alt: '2nd ave img 5'
+      },
+      {
+        src: assets + '/2nd-avenue-6.jpg',
+        alt: '2nd ave img 6'
+      },
+      {
+        src: assets + '/2nd-avenue-7.jpg',
+        alt: '2nd ave img 7'
+      },
+      {
+        src: assets + '/2nd-avenue-8.jpg',
+        alt: '2nd ave img 8'
       }
       ]
     },
@@ -364,7 +412,7 @@ module.exports = {
       subtext: 'San Francisco, California',
       categories: 'project-multi-unit',
       portfolioImg: {
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/1825-mission-cover.jpg',
         alt: '1825 mission img'
       },
       duration: '',
@@ -375,16 +423,24 @@ module.exports = {
       },
       info: '',
       img: [{
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/1825-mission-1.jpg',
         alt: '1825 mission img 1'
       },
       {
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/1825-mission-2.jpg',
         alt: '1825 mission img 2'
       },
       {
-        src: 'http://via.placeholder.com/300x300',
+        src: assets + '/1825-mission-3.jpg',
         alt: '1825 mission img 3'
+      },
+      {
+        src: assets + '/1825-mission-4.jpg',
+        alt: '1825 mission img 4'
+      },
+      {
+        src: assets + '/1825-mission-5.jpg',
+        alt: '1825 mission img 5'
       }
       ]
     }
