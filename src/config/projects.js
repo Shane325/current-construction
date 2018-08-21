@@ -30,10 +30,10 @@ module.exports = {
       src: assets + '/bridgeview-cover.jpg',
       alt: 'Bridgeview img'
     },
-    duration: '4 weeks',
+    duration: '6 months',
     type: 'Residential',
     architectOrEngineer: {
-      name: '',
+      name: 'Robin Shmidt',
       url: ''
     },
     info: 'New exterior hardy board siding, trim and vinyl windows installed professionally by Current Construction. Atop one of San Francisco\'s many hills weathered by the constant rolling fog and dampness, this home was in dire need of a face lift and durable weather barrier.',
@@ -80,13 +80,13 @@ module.exports = {
       src: assets + '/fillmore-cover.jpg',
       alt: 'Fillmore img'
     },
-    duration: '9 weeks',
+    duration: '8 months',
     type: 'Residential, Structural',
     architectOrEngineer: {
-      name: '',
-      url: ''
+      name: 'Noa Design & Construction',
+      url: 'https://www.noadesignbuild.com/'
     },
-    info: '',
+    info: 'A complete single family home remodel in the Pacific Heights neighborhood including seismic retrofit, structural framing, layout reconfiguration, plumbing, heating, electrical and amazing woodwork and finish carpentry.',
     img: [{
       src: assets + '/fillmore-1.jpg',
       alt: 'Fillmore img 1'
@@ -113,10 +113,10 @@ module.exports = {
     duration: '4 weeks',
     type: 'Residential',
     architectOrEngineer: {
-      name: '',
-      url: ''
+      name: 'Kevin O\' Connor Engineering',
+      url: 'http://www.kocengineering.com/index.html'
     },
-    info: '',
+    info: 'Foundation replacement and stylish exterior work including window replacement, rigid insulation install and siding, cedar trim out and decking.',
     img: [{
       src: assets + '/daly-1.jpg',
       alt: 'Daly city img 1'
@@ -246,11 +246,11 @@ module.exports = {
       src: assets + '/7th-cover.jpg',
       alt: '7th img'
     },
-    duration: '',
+    duration: '6 months',
     type: 'Commercial',
     architectOrEngineer: {
-      name: '',
-      url: ''
+      name: 'Harvey Hacker Architects',
+      url: 'http://harveyhacker.com/'
     },
     info: 'We transformed this old film studio into a modern office space for a tech start-up. We started by adding moment frames and new footings and then anchored the existing joist to the concrete wall using simpson hold down and titen bolts. We also added 2 bathrooms, a kitchen and mezzanine level with conference room.',
     img: [{
@@ -276,11 +276,11 @@ module.exports = {
       src: assets + '/2630-mission-cover.jpg',
       alt: 'Mission street img'
     },
-    duration: '',
+    duration: '10 months',
     type: 'Commercial',
     architectOrEngineer: {
-      name: '',
-      url: ''
+      name: 'Powell & Associates Inc.',
+      url: 'http://powellandassoc.com/'
     },
     info: '2630 Mission is a 7000 sq. ft. commercial-retail build out in the heart of the bustling Mission District of San Francisco. With the skill and expertise of our team at Current Construction the building underwent extensive structural repair, a complete reconstruction of utilities and then precise finish work.',
     img: [{
@@ -318,7 +318,7 @@ module.exports = {
       src: assets + '/market-cover.jpg',
       alt: 'Market street img'
     },
-    duration: '',
+    duration: '4 months',
     type: 'Commercial',
     architectOrEngineer: {
       name: '',
@@ -364,11 +364,11 @@ module.exports = {
       src: assets + '/2nd-avenue-cover.jpg',
       alt: '2nd ave img'
     },
-    duration: '',
+    duration: '12 months',
     type: 'Multi-Unit',
     architectOrEngineer: {
-      name: '',
-      url: ''
+      name: 'Evoco Architecture',
+      url: 'http://evocoarch.com/'
     },
     info: 'This 1925 East Lake Merritt building has undergone extensive renovations while preserving the original period details. See more and explore 3D Space at: http://www.2ndonlake.com/',
     img: [{
@@ -414,10 +414,10 @@ module.exports = {
       src: assets + '/1825-mission-cover.jpg',
       alt: '1825 mission img'
     },
-    duration: '',
+    duration: '10 months',
     type: 'Multi-Unit',
     architectOrEngineer: {
-      name: '',
+      name: 'Current Construction',
       url: ''
     },
     info: '1825 Mission Street, containing residential units for the elderly, was in need of a transformation. We gave the building a new lease on life by upgrading and remodelling all the residences, along with the reception areas, communal living space, courtyard and the exterior of the building.',
