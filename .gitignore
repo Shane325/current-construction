@@ -1,2 +1,4 @@
 node_modules/
 public/dist
+nginx-conf/docker-compose.yml
+dhparam/
