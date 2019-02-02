@@ -8,6 +8,9 @@ let router = express.Router()
 let config = require('./config/config')
 let controller = require('./main.controller')
 let service = require('./main.service')
+let compression = require('compression')
+
+router.use(compression())
 
 // Define the application routes
 router.get('/', controller.getHome)
