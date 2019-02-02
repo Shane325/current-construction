@@ -3,3 +3,4 @@ public/dist
 nginx-conf/
 docker-compose.yml
 dhparam/
+ssl_renew.sh
