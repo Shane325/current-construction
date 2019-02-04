@@ -1,19 +1,42 @@
 'use strict'
 
-let gulp = require('gulp'),
-  autoprefixer = require('gulp-autoprefixer'),
-  cssnano = require('gulp-cssnano'),
-  uglify = require('gulp-uglify'),
-  imagemin = require('gulp-imagemin'),
-  rename = require('gulp-rename'),
-  concat = require('gulp-concat'),
-  notify = require('gulp-notify'),
-  cache = require('gulp-cache'),
-  livereload = require('gulp-livereload'),
-  rev = require('gulp-rev'),
-  runSequence = require('run-sequence'),
-  nodemon = require('gulp-nodemon'),
-  del = require('del')
+let gulp = require('gulp')
+let autoprefixer = require('gulp-autoprefixer')
+let cssnano = require('gulp-cssnano')
+let uglify = require('gulp-uglify')
+let imagemin = require('gulp-imagemin')
+let rename = require('gulp-rename')
+let concat = require('gulp-concat')
+let notify = require('gulp-notify')
+let cache = require('gulp-cache')
+let livereload = require('gulp-livereload')
+let rev = require('gulp-rev')
+let runSequence = require('run-sequence')
+let nodemon = require('gulp-nodemon')
+let del = require('del')
+let sourcemaps = require('gulp-sourcemaps')
+let minify = require('gulp-minify')
+let cleanCss = require('gulp-clean-css')
+
+let cssAssets = [
+  'public/css/bootstrap.css',
+  'public/css/style.css',
+  'public/css/swiper.css',
+  'public/css/demos/construction/construction.css',
+  'public/css/dark.css',
+  'public/css/font-icons.css',
+  'public/css/animate.css',
+  'public/css/magnific-popup.css',
+  'public/css/demos/construction/fonts.css',
+  'public/css/responsive.css',
+  'public/css/demos/construction/colors.css'
+]
+
+let jsAssets = [
+  'public/js/jquery.js',
+  'public/js/plugins.js',
+  'public/js/functions.js'
+]
 
 // Start:prod
 gulp.task('start:prod', function () {
@@ -33,20 +56,31 @@ gulp.task('start', function () {
 
 // Styles
 gulp.task('styles', function () {
-  return gulp.src('public/css/**/*.css')
-    .pipe(autoprefixer('last 2 version'))
+  return gulp.src(cssAssets)
+    .pipe(concat('stylesheet.css'))
+    .pipe(cleanCss())
+    .pipe(rev())
     .pipe(gulp.dest('public/dist/css'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(cssnano())
-    .pipe(gulp.dest('public/dist/css'))
+    .pipe(rev.manifest('public/dist/rev-manifest.json', {
+      merge: true
+    }))
+    .pipe(gulp.dest(''))
 })
 
 // Scripts
 gulp.task('scripts', function () {
-  return gulp.src('public/js/**/*.js')
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
+  return gulp.src(jsAssets)
+    .pipe(concat('bundle.js'))
+    .pipe(minify({
+      ext: { min: '.js' },
+      noSource: true
+    }))
+    .pipe(rev())
     .pipe(gulp.dest('public/dist/js'))
+    .pipe(rev.manifest('public/dist/rev-manifest.json', {
+      merge: true
+    }))
+    .pipe(gulp.dest(''))
 })
 
 // Images
@@ -64,13 +98,8 @@ gulp.task('fonts', function () {
 
 // Clean
 gulp.task('clean', function () {
-  return del(['public/dist/css', 'public/dist/js', 'public/dist/images'])
+  return del(['public/dist/css', 'public/dist/js', 'public/dist/images', 'public/dist'])
 })
-
-// Default task
-// gulp.task('default', ['clean'], function () {
-//  gulp.start('styles', 'scripts', 'images')
-// })
 
 // Run the project in production mode
 gulp.task('prod', function (done) {
