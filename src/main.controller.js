@@ -12,6 +12,8 @@ let estimateConfig = require('./config/estimate')
 let contactConfig = require('./config/contact')
 let projectsConfig = require('./config/projects')
 let projectConfig = require('./config/project')
+let landingConfig = require('./config/landing')
+let landingProjectsConfig = require('./config/landing-projects')
 let HttpStatus = require('http-status-codes')
 let MAILGUN_API_KEY = config.mailgun.api_key
 let MAILGUN_DOMAIN = config.mailgun.domain
@@ -141,6 +143,22 @@ module.exports.getProject = (req, res) => {
     title: projectConfig.title,
     projects: projectsConfig.projects,
     project: req.project
+  })
+}
+
+/*
+ * Return email landing page
+ *
+ * @returns - renders email landing page
+ */
+module.exports.getEmailLanding = (req, res) => {
+  res.render('../views/pages/email-landing', {
+    css: config.lib.css,
+    js: config.lib.js,
+    assets: config.assets,
+    pageTitle: landingConfig.pageTitle,
+    state: landingConfig.state,
+    projects: landingProjectsConfig.projects
   })
 }
 

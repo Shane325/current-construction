@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- HTML5 -->
+
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="stretched">
+    <div id="wrapper" class="clearfix">
+        <% include ../components/core/top-bar-plain %>
+            <% include ../partials/header-plain %>
+                <section id="content">
+                    <div class="content-wrap">
+                        <div class="container clearfix">
+                            <div id="section-home" class="heading-block title-center nobottomborder page-section">
+                                <h1>Multi unit remodels & soft story upgrades</h1>
+                                <span>San Francisco based <span class="color">Full Service General Contractor</span></span>
+                            </div>
+                            <div class="center bottommargin">
+                                <a href="#" data-scrollto="#portfolio" class="button button-3d button-teal button-xlarge nobottommargin"><i class="icon-star3"></i>See our projects</a>                                - OR - <a href="#" data-scrollto="#estimate-form"
+                                    class="button button-3d button-red button-xlarge nobottommargin"><i class="icon-user2"></i>Get a free estimate</a>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="col_two_third topmargin nobottommargin">
+                                <div style="position: relative;" data-height-xl="535" data-height-lg="442" data-height-md="338"
+                                    data-height-sm="316" data-height-xs="201">
+                                    <img data-animate="fadeInLeft" data-delay="600" src="<%= assets %>/team.jpg" alt="iPhone"
+                                        style="position: absolute; top: 0; left: 0;">
+                                </div>
+                            </div>
+                            <div class="col_one_third topmargin nobottommargin col_last">
+                                <blockquote class="quote">
+                                    <p>
+                                        We apply a process based approach of sharing expert construction knowledge and
+                                        advice with you before coming together
+                                        to build your project.
+                                    </p>
+                                    <footer class="blockquote-footer">Colm Higgins, Founder & CEO</footer>
+                                </blockquote>
+                                <div class="divider divider-short"><i class="icon-circle"></i></div>
+                                <ul class="iconlist iconlist-large iconlist-color">
+                                    <li><i class="icon-ok-sign"></i> Multi unit remodels
+                                    </li>
+                                    <li><i class="icon-ok-sign"></i> Soft story and
+                                        structural upgrades
+                                    </li>
+                                    <li><i class="icon-ok-sign"></i> New home construction
+                                    </li>
+                                    <li><i class="icon-ok-sign"></i> Commercial remodels
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="section">
+                            <div class="container clearfix">
+                                <div id="estimate-form" class="heading-block title-center page-section">
+                                    <h2>Free Estimate</h2>
+                                    <span>Fill out this simple form to get in touch with our expert team!</span>
+                                </div>
+                                <% include ../components/forms/contact-form-landing %>
+                            </div>
+                        </div>
+                        <div class="container clearfix">
+                            <div id="portfolio" class="portfolio grid-container portfolio-1 clearfix">
+                                <% projects.forEach(function(project){ %>
+                                    <article class="portfolio-item pf-media pf-icons clearfix">
+                                        <div class="portfolio-image">
+                                            <img src="<%=project.portfolioImg.src %>" alt="<%=project.portfolioImg.alt %>">
+                                        </div>
+                                        <div class="portfolio-desc">
+                                            <h3>
+                                                <%=project.name %>
+                                            </h3>
+                                            <span><%=project.subtext %></span>
+                                            <p>
+                                                <%=project.info %>
+                                            </p>
+                                            <ul class="iconlist">
+                                                <li><i class="icon-ok"></i> <strong>Duration:</strong>&nbsp;
+                                                    <%=project.duration %>
+                                                </li>
+                                                <li><i class="icon-ok"></i> <strong>Project type:</strong>&nbsp;
+                                                    <%=project.type %>
+                                                </li>
+                                                <li><i class="icon-ok"></i> <strong>Architect / Engineer:</strong>&nbsp;
+                                                    <%=project.architectOrEngineer.name %>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                    <% }) %>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <% include ../partials/footer %>
+    </div>
+    <% include ../partials/foot %>
+</body>
+
+</html>
