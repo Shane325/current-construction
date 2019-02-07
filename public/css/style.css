@@ -3744,6 +3744,12 @@ body:not(.device-touch) .portfolio {
 	height: 300px;
 }
 
+.portfolio-item .portfolio-image a {
+  display: block;
+  width: auto;
+  height: auto;
+}  
+
 body:not(.device-touch):not(.device-sm):not(.device-xs) .portfolio-notitle .portfolio-image img {
 	-webkit-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
@@ -4160,7 +4166,7 @@ body.device-touch.device-xs .portfolio-notitle .portfolio-desc { display: none !
 
 .portfolio-1 .portfolio-desc {
 	float: left;
-	width: 35%;
+	width: 55%;
 	padding: 10px 0 10px 40px;
 }
 
@@ -13578,4 +13584,16 @@ body:not(.no-transition) #wrapper,
 	text-shadow: none !important;
 }
 
+div .fixed-cta {
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  z-index: 10;
+}
+
+@media only screen and (max-width: 991px) {
+    div .fixed-cta {
+        display: none;
+    }
+}
 

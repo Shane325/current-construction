@@ -163,6 +163,21 @@ module.exports.getEmailLanding = (req, res) => {
 }
 
 /*
+ * Return email landing page 2
+ *
+ * @returns - renders email landing page 2
+ */
+module.exports.getEmailLanding2 = (req, res) => {
+  res.render('../views/pages/email-landing-2', {
+    css: config.lib.css,
+    js: config.lib.js,
+    assets: config.assets,
+    pageTitle: landingConfig.pageTitle,
+    state: landingConfig.state,
+    projects: landingProjectsConfig.projects
+  })
+}
+/*
  * Send contact email
  *
  */

@@ -24,6 +24,9 @@
 
 
 @media (min-width: 992px) and (max-width: 1199px) {
+  .retina-logo {
+    width: 175px;
+  }
 
 	#wrapper { width: 1000px; }
 
@@ -784,7 +787,7 @@
 	.portfolio-1.portfolio-fullwidth .portfolio-item .portfolio-image,
 	.portfolio-1.portfolio-fullwidth .portfolio-item .portfolio-image a,
 	.portfolio-1.portfolio-fullwidth .portfolio-item .portfolio-image img {
-		width: 100%;
+		width: auto;
 		height: auto;
 	}
 

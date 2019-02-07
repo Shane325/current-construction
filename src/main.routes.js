@@ -23,6 +23,7 @@ router.post('/contact/send-email', controller.sendContactEmail)
 router.get('/projects', controller.getProjects)
 router.get('/project/:projectId', controller.getProject)
 router.get('/email-landing', controller.getEmailLanding)
+router.get('/email-landing-2', controller.getEmailLanding2)
 
 // Route middleware
 router.param('projectId', service.getProjectById)
