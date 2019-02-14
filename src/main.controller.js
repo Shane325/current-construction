@@ -14,6 +14,7 @@ let projectsConfig = require('./config/projects')
 let projectConfig = require('./config/project')
 let landingConfig = require('./config/landing')
 let landingProjectsConfig = require('./config/landing-projects')
+let adminConfig = require('./config/admin')
 let HttpStatus = require('http-status-codes')
 let MAILGUN_API_KEY = config.mailgun.api_key
 let MAILGUN_DOMAIN = config.mailgun.domain
@@ -177,6 +178,23 @@ module.exports.getEmailLanding2 = (req, res) => {
     projects: landingProjectsConfig.projects
   })
 }
+
+/*
+ * Return admin page
+ *
+ * @returns - renders admin page
+ */
+module.exports.getAdminPage = (req, res) => {
+  res.render('../views/pages/admin', {
+    css: config.lib.css,
+    js: config.lib.js,
+    assets: config.assets,
+    pageTitle: adminConfig.pageTitle,
+    state: adminConfig.state,
+    title: adminConfig.title
+  })
+}
+
 /*
  * Send contact email
  *
