@@ -23,6 +23,10 @@ let mailgun = require('mailgun-js')({
   apiKey: MAILGUN_API_KEY,
   domain: MAILGUN_DOMAIN
 })
+let GoogleSpreadsheet = require('google-spreadsheet')
+
+let estimateDoc = new GoogleSpreadsheet(config.google.estimateSpreadsheetKey)
+let contactDoc = new GoogleSpreadsheet(config.google.contactSpreadsheetKey)
 
 /*
  * Return home page
@@ -211,9 +215,24 @@ module.exports.sendContactEmail = (req, res, next) => {
     if (error) {
       return next(error)
     }
-
-    res.status(HttpStatus.OK)
-    res.send('ok')
+    let creds = require('./config/google-credentials.json')
+    contactDoc.useServiceAccountAuth(creds, (err) => {
+      if (err) {
+        return next(err)
+      }
+      contactDoc.addRow(1, {
+        'date': new Date().toISOString(),
+        'name': req.body.name,
+        'email': req.body.email,
+        'message': req.body.message
+      }, (err, row) => {
+        if (err) {
+          return next(err)
+        }
+        res.status(HttpStatus.OK)
+        res.json({ message: 'Form submitted successfully' })
+      })
+    })
   })
 }
 
@@ -234,8 +253,32 @@ module.exports.sendEstimateEmail = (req, res, next) => {
       return next(error)
     }
 
-    res.status(HttpStatus.OK)
-    res.send('ok')
+    let creds = require('./config/google-credentials.json')
+    estimateDoc.useServiceAccountAuth(creds, (err) => {
+      if (err) {
+        return next(err)
+      }
+      estimateDoc.addRow(1, {
+        'date': new Date().toISOString(),
+        'name': req.body.name,
+        'email': req.body.email,
+        'phone': req.body.phone,
+        'city': req.body.city,
+        'state': req.body.state,
+        'zip': req.body.zip,
+        'project areas': getProjectAreas(req.body.projectAreas),
+        'project description': req.body.description,
+        'plans': req.body.plans,
+        'property size': req.body.propertySize,
+        'project budget': req.body.budget
+      }, (err, row) => {
+        if (err) {
+          return next(err)
+        }
+        res.status(HttpStatus.OK)
+        res.json({ message: 'Estimate request submitted successfully' })
+      })
+    })
   })
 }
 
@@ -249,14 +292,13 @@ function getEstimateBody (body) {
   let line6 = 'State: ' + (body.state || '')
   let line7 = 'Zip: ' + (body.zip || '')
 
-  let line8 = 'Project type: ' + (body.projectType || '')
   let line9 = 'Project areas: ' + (getProjectAreas(body.projectAreas) || '')
   let line10 = 'Project description: ' + (body.description || '')
   let line11 = 'Do you have plans?: ' + (body.plans || '')
   let line12 = 'Approximate property size: ' + (body.propertySize || '')
   let line13 = 'Approximate project budget: ' + (body.budget || '')
 
-  return _.concat(line1, newLine, line2, line3, line4, line5, line6, line7, newLine, line8, line9, line10, line11, line12, line13)
+  return _.concat(line1, newLine, line2, line3, line4, line5, line6, line7, newLine, line9, line10, line11, line12, line13)
 }
 
 function getProjectAreas (areas) {
