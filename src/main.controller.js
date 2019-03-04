@@ -128,7 +128,8 @@ module.exports.getProjects = (req, res) => {
     pageTitle: projectsConfig.pageTitle,
     state: projectsConfig.state,
     title: projectsConfig.title,
-    projects: projectsConfig.projects
+    projects: projectsConfig.projects,
+    type: req.query.type || '*'
   })
 }
 
