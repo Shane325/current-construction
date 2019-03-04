@@ -26,7 +26,6 @@ let mailgun = require('mailgun-js')({
 let GoogleSpreadsheet = require('google-spreadsheet')
 
 let estimateDoc = new GoogleSpreadsheet(config.google.estimateSpreadsheetKey)
-let contactDoc = new GoogleSpreadsheet(config.google.contactSpreadsheetKey)
 
 /*
  * Return home page
@@ -216,12 +215,13 @@ module.exports.sendContactEmail = (req, res, next) => {
       return next(error)
     }
     let creds = require('./config/google-credentials.json')
-    contactDoc.useServiceAccountAuth(creds, (err) => {
+    estimateDoc.useServiceAccountAuth(creds, (err) => {
       if (err) {
         return next(err)
       }
-      contactDoc.addRow(1, {
+      estimateDoc.addRow(1, {
         'date': new Date().toISOString(),
+        'form': 'Contact',
         'name': req.body.name,
         'email': req.body.email,
         'message': req.body.message
@@ -260,8 +260,10 @@ module.exports.sendEstimateEmail = (req, res, next) => {
       }
       estimateDoc.addRow(1, {
         'date': new Date().toISOString(),
+        'form': 'Estimate',
         'name': req.body.name,
         'email': req.body.email,
+        'message': '',
         'phone': req.body.phone,
         'city': req.body.city,
         'state': req.body.state,
