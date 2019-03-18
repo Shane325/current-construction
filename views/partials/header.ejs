@@ -59,7 +59,7 @@
                                 </a>
                                 <ul>
                                     <% var commercial = projects.filter(function(project) { %>
-                                        <% return project.categories === 'project-commercial' %>
+                                        <% return project.categories.includes('project-commercial') %>
                                             <% }) %>
                                                 <% commercial.forEach(function(project) { %>
                                                     <li>
@@ -78,7 +78,7 @@
                                 </a>
                                 <ul>
                                     <% var residential = projects.filter(function(project) { %>
-                                        <% return project.categories === 'project-residential' %>
+                                        <% return project.categories.includes('project-residential') %>
                                             <% }) %>
                                                 <% residential.forEach(function(project) { %>
                                                     <li>
@@ -97,7 +97,7 @@
                                 </a>
                                 <ul>
                                     <% var structural = projects.filter(function(project) { %>
-                                        <% return project.categories === 'project-structural' %>
+                                        <% return project.categories.includes('project-structural') %>
                                             <% }) %>
                                                 <% structural.forEach(function(project) { %>
                                                     <li>
@@ -116,7 +116,7 @@
                                 </a>
                                 <ul>
                                     <% var multiUnit = projects.filter(function(project) { %>
-                                        <% return project.categories === 'project-multi-unit' %>
+                                        <% return project.categories.includes('project-multi-unit') %>
                                             <% }) %>
                                                 <% multiUnit.forEach(function(project) { %>
                                                     <li>

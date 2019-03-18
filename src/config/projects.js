@@ -488,6 +488,72 @@ module.exports = {
       alt: 'Hanover img 7'
     }
     ]
+  },
+  {
+    id: 13,
+    name: '1166 Haight St.',
+    subtext: 'San Francisco, California',
+    categories: 'project-multi-unit project-structural',
+    portfolioImg: {
+      src: assets + '/haight-cover.jpg',
+      alt: 'Haight img'
+    },
+    duration: '15 months',
+    type: 'Multi-Unit, Structural',
+    architectOrEngineer: {
+      name: 'Shatara Architecture / Himmati Engineering',
+      url: 'https://www.shataraarch.com/'
+    },
+    info: 'Extensive remodel and structural upgrade to a 1907 victorian 12 unit building. Some of the work included shoring up the entire building, replacing foundation and adding approx 3000 sq ft to the property. Full restoration of the original period facade.',
+    img: [{
+      src: assets + '/haight-1.jpg',
+      alt: 'Haight img 1'
+    },
+    {
+      src: assets + '/haight-2.jpg',
+      alt: 'Haight img 2'
+    },
+    {
+      src: assets + '/haight-3.jpg',
+      alt: 'Haight img 3'
+    },
+    {
+      src: assets + '/haight-4.jpg',
+      alt: 'Haight img 4'
+    },
+    {
+      src: assets + '/haight-5.jpg',
+      alt: 'Haight img 5'
+    },
+    {
+      src: assets + '/haight-6.jpg',
+      alt: 'Haight img 6'
+    },
+    {
+      src: assets + '/haight-7.jpg',
+      alt: 'Haight img 7'
+    },
+    {
+      src: assets + '/haight-8.jpg',
+      alt: 'Haight img 8'
+    },
+    {
+      src: assets + '/haight-9.jpg',
+      alt: 'Haight img 9'
+    },
+    {
+      src: assets + '/haight-10.jpg',
+      alt: 'Haight img 10'
+    },
+    {
+      src: assets + '/haight-11.jpg',
+      alt: 'Haight img 11'
+    },
+    {
+      src: assets + '/haight-12.jpg',
+      alt: 'Haight img 12'
+    }
+    ]
   }
   ]
 }
