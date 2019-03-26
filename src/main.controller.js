@@ -129,7 +129,8 @@ module.exports.getProjects = (req, res) => {
     state: projectsConfig.state,
     title: projectsConfig.title,
     projects: projectsConfig.projects,
-    type: req.query.type || '*'
+    type: req.query.type || '*',
+    structuralProjects: projectsConfig.structuralProjects
   })
 }
 

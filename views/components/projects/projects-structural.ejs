@@ -1,0 +1,10 @@
+<div class="row margin-top-50">
+    <div class="col-md-12">
+        <h3>Other structural upgrades:</h3>
+        <ul class="iconlist iconlist-large iconlist-color">
+            <% structuralProjects.forEach(function(project) { %>
+            <li><i class="icon-ok-sign"></i> <a href="<%= project.url %>" target="_blank"><%= project.name %></a> </li>
+                <%  }) %>
+        </ul>
+    </div>
+</div>
