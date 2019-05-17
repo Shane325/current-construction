@@ -15,6 +15,7 @@ let projectConfig = require('./config/project')
 let landingConfig = require('./config/landing')
 let landingProjectsConfig = require('./config/landing-projects')
 let adminConfig = require('./config/admin')
+let softStoryConfig = require('./config/soft-story')
 let HttpStatus = require('http-status-codes')
 let MAILGUN_API_KEY = config.mailgun.api_key
 let MAILGUN_DOMAIN = config.mailgun.domain
@@ -197,6 +198,23 @@ module.exports.getAdminPage = (req, res) => {
     pageTitle: adminConfig.pageTitle,
     state: adminConfig.state,
     title: adminConfig.title
+  })
+}
+
+/**
+ * Return soft story page
+ *
+ * @returns - renders soft story page
+ */
+module.exports.getSoftStoryPage = (req, res) => {
+  res.render('../views/pages/soft-story', {
+    css: config.lib.css,
+    js: config.lib.js,
+    assets: config.assets,
+    pageTitle: softStoryConfig.pageTitle,
+    state: softStoryConfig.state,
+    title: softStoryConfig.title,
+    projects: projectsConfig.projects
   })
 }
 

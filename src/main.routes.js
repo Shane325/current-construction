@@ -25,6 +25,7 @@ router.get('/project/:projectId', controller.getProject)
 router.get('/email-landing', controller.getEmailLanding)
 router.get('/email-landing-2', controller.getEmailLanding2)
 router.get('/admin', controller.getAdminPage)
+router.get('/soft-story', controller.getSoftStoryPage)
 
 // Route middleware
 router.param('projectId', service.getProjectById)

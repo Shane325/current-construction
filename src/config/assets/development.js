@@ -13,7 +13,8 @@ module.exports = {
       '/css/magnific-popup.css',
       '/css/demos/construction/fonts.css',
       '/css/responsive.css',
-      '/css/demos/construction/colors.css'
+      '/css/demos/construction/colors.css',
+      '/css/custom.css'
     ],
     js: [
       '/js/jquery.js',
