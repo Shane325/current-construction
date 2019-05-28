@@ -16,6 +16,7 @@ let landingConfig = require('./config/landing')
 let landingProjectsConfig = require('./config/landing-projects')
 let adminConfig = require('./config/admin')
 let softStoryConfig = require('./config/soft-story')
+let remodelConfig = require('./config/remodel')
 let HttpStatus = require('http-status-codes')
 let MAILGUN_API_KEY = config.mailgun.api_key
 let MAILGUN_DOMAIN = config.mailgun.domain
@@ -214,6 +215,23 @@ module.exports.getSoftStoryPage = (req, res) => {
     pageTitle: softStoryConfig.pageTitle,
     state: softStoryConfig.state,
     title: softStoryConfig.title,
+    projects: projectsConfig.projects
+  })
+}
+
+/**
+ * Return remodel page
+ *
+ * @returns - renders remodel page
+ */
+module.exports.getRemodelPage = (req, res) => {
+  res.render('../views/pages/remodel', {
+    css: config.lib.css,
+    js: config.lib.js,
+    assets: config.assets,
+    pageTitle: remodelConfig.pageTitle,
+    state: remodelConfig.state,
+    title: remodelConfig.title,
     projects: projectsConfig.projects
   })
 }
