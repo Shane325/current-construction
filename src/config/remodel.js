@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-  pageTitle: 'High End and Multi Unit Remodels in San Francisco',
+  pageTitle: 'Remodel in San Francisco | High End and Multi Unit Remodeling',
   state: 'remodel',
   title: {
     text: 'Remodel San Francisco',

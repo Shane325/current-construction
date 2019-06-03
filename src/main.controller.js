@@ -123,11 +123,31 @@ module.exports.getContact = (req, res) => {
  * @returns - renders projects page
  */
 module.exports.getProjects = (req, res) => {
+  let projectType
+
+  switch (req.query.type) {
+    case '.project-structural':
+      projectType = 'Structural'
+      break
+    case '.project-commercial':
+      projectType = 'Commercial'
+      break
+    case '.project-residential':
+      projectType = 'Residential'
+      break
+    case '.project-multi-unit':
+      projectType = 'Multi Unit'
+      break
+    default:
+      projectType = 'All'
+      break
+  }
+
   res.render('../views/pages/projects', {
     css: config.lib.css,
     js: config.lib.js,
     assets: config.assets,
-    pageTitle: projectsConfig.pageTitle,
+    pageTitle: `${projectType} Projects`,
     state: projectsConfig.state,
     title: projectsConfig.title,
     projects: projectsConfig.projects,
@@ -146,7 +166,7 @@ module.exports.getProject = (req, res) => {
     css: config.lib.css,
     js: config.lib.js,
     assets: config.assets,
-    pageTitle: projectConfig.pageTitle,
+    pageTitle: `${req.project.name} ${req.project.type} Project`,
     state: projectConfig.state,
     title: projectConfig.title,
     projects: projectsConfig.projects,
