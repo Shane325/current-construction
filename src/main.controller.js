@@ -2,7 +2,6 @@
 /*
  * Module dependencies
  */
-let path = require('path')
 let _ = require('lodash')
 let config = require('./config/config')
 let homeConfig = require('./config/home')
@@ -40,6 +39,7 @@ module.exports.getHome = (req, res) => {
     js: config.lib.js,
     assets: config.assets,
     pageTitle: homeConfig.pageTitle,
+    pageDescription: homeConfig.pageDescription,
     state: homeConfig.state,
     projects: projectsConfig.projects
   })
@@ -56,6 +56,7 @@ module.exports.getAbout = (req, res) => {
     js: config.lib.js,
     assets: config.assets,
     pageTitle: aboutConfig.pageTitle,
+    pageDescription: aboutConfig.pageDescription,
     state: aboutConfig.state,
     title: aboutConfig.title,
     projects: projectsConfig.projects
@@ -73,6 +74,7 @@ module.exports.getServices = (req, res) => {
     js: config.lib.js,
     assets: config.assets,
     pageTitle: servicesConfig.pageTitle,
+    pageDescription: servicesConfig.pageDescription,
     state: servicesConfig.state,
     title: servicesConfig.title,
     projects: projectsConfig.projects
@@ -91,6 +93,7 @@ module.exports.getEstimate = (req, res) => {
     assets: config.assets,
     status: req.query.status || null,
     pageTitle: estimateConfig.pageTitle,
+    pageDescription: estimateConfig.pageDescription,
     state: estimateConfig.state,
     title: estimateConfig.title,
     projects: projectsConfig.projects
@@ -109,6 +112,7 @@ module.exports.getContact = (req, res) => {
     assets: config.assets,
     status: req.query.status || null,
     pageTitle: contactConfig.pageTitle,
+    pageDescription: contactConfig.pageDescription,
     state: contactConfig.state,
     title: contactConfig.title,
     projects: projectsConfig.projects,
@@ -148,6 +152,7 @@ module.exports.getProjects = (req, res) => {
     js: config.lib.js,
     assets: config.assets,
     pageTitle: `${projectType} Projects`,
+    pageDescription: `Current Construction General Contractors in San Francisco are highly experienced with ${projectType} projects. We apply expert construction knowledge and best practices to all our jobs.`,
     state: projectsConfig.state,
     title: projectsConfig.title,
     projects: projectsConfig.projects,
@@ -167,6 +172,7 @@ module.exports.getProject = (req, res) => {
     js: config.lib.js,
     assets: config.assets,
     pageTitle: `${req.project.name} ${req.project.type} Project`,
+    pageDescription: `Current Construction General Contractors in San Francisco recently completed their ${req.project.name} project. Another successful project and satisfied client.`,
     state: projectConfig.state,
     title: projectConfig.title,
     projects: projectsConfig.projects,
@@ -185,6 +191,7 @@ module.exports.getEmailLanding = (req, res) => {
     js: config.lib.js,
     assets: config.assets,
     pageTitle: landingConfig.pageTitle,
+    pageDescription: landingConfig.pageDescription,
     state: landingConfig.state,
     projects: landingProjectsConfig.projects
   })
@@ -201,6 +208,7 @@ module.exports.getEmailLanding2 = (req, res) => {
     js: config.lib.js,
     assets: config.assets,
     pageTitle: landingConfig.pageTitle,
+    pageDescription: landingConfig.pageDescription,
     state: landingConfig.state,
     projects: landingProjectsConfig.projects
   })
@@ -217,6 +225,7 @@ module.exports.getAdminPage = (req, res) => {
     js: config.lib.js,
     assets: config.assets,
     pageTitle: adminConfig.pageTitle,
+    pageDescription: 'Current Construction General Contractors San Francisco admin page. This page is reserved for website admins only.',
     state: adminConfig.state,
     title: adminConfig.title
   })

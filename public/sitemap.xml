@@ -5,58 +5,70 @@
     <loc>https://currentcon.com/</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/8</loc>
+    <loc>https://currentcon.com/about</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/7</loc>
-  </url>
-  <url>
-    <loc>https://currentcon.com/project/5</loc>
-  </url>
-  <url>
-    <loc>https://currentcon.com/projects</loc>
-  </url>
-  <url>
-    <loc>https://currentcon.com/project/1</loc>
-  </url>
-  <url>
-    <loc>https://currentcon.com/project/12</loc>
-  </url>
-  <url>
-    <loc>https://currentcon.com/projects?type=.project-structural</loc>
-  </url>
-  <url>
-    <loc>https://currentcon.com/project/11</loc>
-  </url>
-  <url>
-    <loc>https://currentcon.com/project/3</loc>
-  </url>
-  <url>
-    <loc>https://currentcon.com/project/9</loc>
-  </url>
-  <url>
-    <loc>https://currentcon.com/contact</loc>
-  </url>
-  <url>
-    <loc>https://currentcon.com/projects?type=.project-multi-unit</loc>
-  </url>
-  <url>
-    <loc>https://currentcon.com/services</loc>
+    <loc>https://currentcon.com/project/2</loc>
   </url>
   <url>
     <loc>https://currentcon.com/project/13</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/4</loc>
+    <loc>https://currentcon.com/project/1</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/about</loc>
-  </url>
-  <url>
-    <loc>https://currentcon.com/estimate</loc>
+    <loc>https://currentcon.com/projects?type=.project-structural</loc>
   </url>
   <url>
     <loc>https://currentcon.com/projects?type=.project-residential</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/services</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/remodel</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/project/5</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/contact</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/project/4</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/project/3</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/soft-story</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/project/7</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/project/11</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/project/8</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/project/12</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/projects?type=.project-multi-unit</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/projects</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/projects?type=.project-commercial</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/project/9</loc>
+  </url>
+  <url>
+    <loc>https://currentcon.com/estimate</loc>
   </url>
   <url>
     <loc>https://currentcon.com/project/10</loc>
@@ -64,12 +76,6 @@
   <url>
     <loc>https://currentcon.com/project/6</loc>
   </url>
-  <url>
-    <loc>https://currentcon.com/project/2</loc>
-  </url>
-  <url>
-    <loc>https://currentcon.com/projects?type=.project-commercial</loc>
-  </url>
 </urlset>
-<!--<guid value="81e9f934-cc4b-45fc-abb2-7301a1407abc" />-->
+<!--<guid value="43924e0e-255b-44df-aee5-dcfd06da95a7" />-->
 <!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
