@@ -1255,7 +1255,7 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content { display: block; 
 
 #primary-menu ul ul > li.sub-menu > a,
 #primary-menu ul ul > li.sub-menu:hover > a {
-	background-image: url("http://assets.currentcon.com/submenu.png");
+	background-image: url("https://assets.currentcon.com/submenu.png");
 	background-position: right center;
 	background-repeat: no-repeat;
 }
@@ -2943,7 +2943,7 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 	width:100%;
 	height:100%;
 	margin: 0;
-	background: url('http://assets.currentcon.com/pattern2.png') repeat;
+	background: url('https://assets.currentcon.com/pattern2.png') repeat;
 }
 
 .swiper_wrapper .swiper-slide {
@@ -3429,7 +3429,7 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 -----------------------------------------------------------------*/
 
 #page-title.page-title-pattern {
-	background-image: url('http://assets.currentcon.com/pattern.png');
+	background-image: url('https://assets.currentcon.com/pattern.png');
 	background-repeat: repeat;
 	background-attachment: fixed;
 }
