@@ -9,8 +9,22 @@ let router = require('./src/main.routes')
 let path = require('path')
 let favicon = require('serve-favicon')
 let bodyParser = require('body-parser')
+let compression = require('compression')
 let config = require('./src/config/config')
 const port = process.env.PORT || config.port
+
+// Should compress function
+let shouldCompress = (req, res) => {
+  if (req.headers['x-no-compression']) {
+    return false
+  }
+  return compression.filter(req, res)
+}
+
+// Enable compression
+app.use(compression({
+  filter: shouldCompress
+}))
 
 // Serve favicon
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')))
