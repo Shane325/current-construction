@@ -1,8 +1,8 @@
 <header id="header" class="sticky-style-2">
     <div class="container clearfix">
         <div id="logo">
-          <a href="/" class="standard-logo"><img src="<%=assets%>/logo.png" alt="Current Construction Logo General Contractor San Francico"></a>
-          <a href="/" class="retina-logo"><img src="<%=assets%>/logo.png" alt="Current Construction Logo General Contractor San Francico"></a>
+            <a href="/" class="standard-logo"><img src="<%=assets%>/logo.png" alt="Current Construction Logo General Contractor San Francico"></a>
+            <a href="/" class="retina-logo"><img src="<%=assets%>/logo.png" alt="Current Construction Logo General Contractor San Francico"></a>
         </div>
         <ul class="header-extras">
             <li>
@@ -39,16 +39,6 @@
                     <li class="<% if(state === 'services') { %>current<% } %>">
                         <a href="/services">
                             <div>Services</div>
-                        </a>
-                    </li>
-                    <li class="<% if(state === 'soft-story') { %>current<% } %>">
-                        <a href="/soft-story">
-                            <div>Soft Story</div>
-                        </a>
-                    </li>
-                    <li class="<% if(state === 'remodel') { %>current<% } %>">
-                        <a href="/remodel">
-                            <div>Remodel</div>
                         </a>
                     </li>
                     <li class="<% if(state === 'projects' || state === 'project') { %>current<% } %>">
@@ -142,6 +132,11 @@
                     <li class="<% if(state === 'contact') { %>current<% } %>">
                         <a href="/contact">
                             <div>Contact</div>
+                        </a>
+                    </li>
+                    <li class="<% if(state === 'blog') { %>current<% } %>">
+                        <a href="/blog">
+                            <div>Blog</div>
                         </a>
                     </li>
                 </ul>

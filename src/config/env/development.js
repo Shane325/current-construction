@@ -11,5 +11,6 @@ module.exports = {
   google: {
     estimateSpreadsheetKey: '1SvXnQ9P1jfbT8PiRuldM33VV_wP55lmVSB5y-q8fPlc',
     contactSpreadsheetKey: '1IjYx2lyYm1Hui278C8ekOzURAsb3NxMuO7E-b2OL06w'
-  }
+  },
+  cms: 'http://localhost:1337'
 }

@@ -25,18 +25,21 @@ router.get('/project/:projectId', controller.getProject)
 router.get('/email-landing', controller.getEmailLanding)
 router.get('/email-landing-2', controller.getEmailLanding2)
 router.get('/admin', controller.getAdminPage)
-router.get('/soft-story', controller.getSoftStoryPage)
-router.get('/remodel', controller.getRemodelPage)
+router.get('/blog', controller.getBlogPage)
+router.get('/post/:postId', controller.getPostPage)
 
 // Route middleware
 router.param('projectId', service.getProjectById)
+router.param('postId', service.getPostById)
 
 // Middleware to handle errors
 router.use((err, req, res, next) => {
   res.render('../views/partials/error', {
     css: config.lib.css,
     js: config.lib.js,
+    assets: config.assets,
     pageTitle: 'Error',
+    pageDescription: 'An error occured',
     message: err.message,
     error: err
   })

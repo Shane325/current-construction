@@ -3,30 +3,31 @@
  * Module dependencies
  */
 let _ = require('lodash')
-let config = require('./config/config')
-let homeConfig = require('./config/home')
-let aboutConfig = require('./config/about')
-let servicesConfig = require('./config/services')
-let estimateConfig = require('./config/estimate')
-let contactConfig = require('./config/contact')
-let projectsConfig = require('./config/projects')
-let projectConfig = require('./config/project')
-let landingConfig = require('./config/landing')
-let landingProjectsConfig = require('./config/landing-projects')
-let adminConfig = require('./config/admin')
-let softStoryConfig = require('./config/soft-story')
-let remodelConfig = require('./config/remodel')
-let HttpStatus = require('http-status-codes')
-let MAILGUN_API_KEY = config.mailgun.api_key
-let MAILGUN_DOMAIN = config.mailgun.domain
-let MAILGUN_EMAIL = config.mailgun.email
-let mailgun = require('mailgun-js')({
+const config = require('./config/config')
+const homeConfig = require('./config/home')
+const aboutConfig = require('./config/about')
+const servicesConfig = require('./config/services')
+const estimateConfig = require('./config/estimate')
+const contactConfig = require('./config/contact')
+const projectsConfig = require('./config/projects')
+const projectConfig = require('./config/project')
+const landingConfig = require('./config/landing')
+const landingProjectsConfig = require('./config/landing-projects')
+const adminConfig = require('./config/admin')
+const blogConfig = require('./config/blog')
+const HttpStatus = require('http-status-codes')
+const MAILGUN_API_KEY = config.mailgun.api_key
+const MAILGUN_DOMAIN = config.mailgun.domain
+const MAILGUN_EMAIL = config.mailgun.email
+const mailgun = require('mailgun-js')({
   apiKey: MAILGUN_API_KEY,
   domain: MAILGUN_DOMAIN
 })
-let GoogleSpreadsheet = require('google-spreadsheet')
-
-let estimateDoc = new GoogleSpreadsheet(config.google.estimateSpreadsheetKey)
+const GoogleSpreadsheet = require('google-spreadsheet')
+const estimateDoc = new GoogleSpreadsheet(config.google.estimateSpreadsheetKey)
+const request = require('request')
+const Remarkable = require('remarkable')
+const md = new Remarkable()
 
 /*
  * Return home page
@@ -232,36 +233,57 @@ module.exports.getAdminPage = (req, res) => {
 }
 
 /**
- * Return soft story page
+ * Return blog page
  *
- * @returns - renders soft story page
+ * @returns - renders blog page
  */
-module.exports.getSoftStoryPage = (req, res) => {
-  res.render('../views/pages/soft-story', {
-    css: config.lib.css,
-    js: config.lib.js,
-    assets: config.assets,
-    pageTitle: softStoryConfig.pageTitle,
-    state: softStoryConfig.state,
-    title: softStoryConfig.title,
-    projects: projectsConfig.projects
+module.exports.getBlogPage = (req, res) => {
+  const options = {
+    url: `${config.cms}/posts?_sort=published_at:desc`,
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json'
+    }
+  }
+
+  request(options, (error, response, body) => {
+    if (error) {
+      throw (error)
+    }
+    let data = JSON.parse(body)
+
+    res.render('../views/pages/blog', {
+      css: config.lib.css,
+      js: config.lib.js,
+      assets: config.assets,
+      pageTitle: 'Blog',
+      pageDescription: 'Current Construction General Contractors blog. We regularly publish interesting and informative blog posts about construction, design and real estate in the San Francisco Bay Area.',
+      state: 'blog',
+      title: blogConfig.title,
+      projects: projectsConfig.projects,
+      posts: data
+    })
   })
 }
 
 /**
- * Return remodel page
+ * Return post page
  *
- * @returns - renders remodel page
+ * @returns - renders post page
  */
-module.exports.getRemodelPage = (req, res) => {
-  res.render('../views/pages/remodel', {
+module.exports.getPostPage = (req, res) => {
+  let post = req.post
+  post.content = md.render(post.content)
+
+  res.render('../views/pages/post', {
     css: config.lib.css,
     js: config.lib.js,
     assets: config.assets,
-    pageTitle: remodelConfig.pageTitle,
-    state: remodelConfig.state,
-    title: remodelConfig.title,
-    projects: projectsConfig.projects
+    pageTitle: post.pageTitle,
+    pageDescription: post.pageDescription,
+    state: 'blog',
+    projects: projectsConfig.projects,
+    post: post
   })
 }
 
@@ -297,7 +319,9 @@ module.exports.sendContactEmail = (req, res, next) => {
           return next(err)
         }
         res.status(HttpStatus.OK)
-        res.json({ message: 'Form submitted successfully' })
+        res.json({
+          message: 'Form submitted successfully'
+        })
       })
     })
   })
@@ -345,7 +369,9 @@ module.exports.sendEstimateEmail = (req, res, next) => {
           return next(err)
         }
         res.status(HttpStatus.OK)
-        res.json({ message: 'Estimate request submitted successfully' })
+        res.json({
+          message: 'Estimate request submitted successfully'
+        })
       })
     })
   })
