@@ -2,80 +2,86 @@
 <!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://currentcon.com/</loc>
+    <loc>http://currentcon.com/</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/about</loc>
+    <loc>http://currentcon.com/contact</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/2</loc>
+    <loc>http://currentcon.com/projects?type=.project-structural</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/13</loc>
+    <loc>http://currentcon.com/project/4</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/1</loc>
+    <loc>http://currentcon.com/project/3</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/projects?type=.project-structural</loc>
+    <loc>http://currentcon.com/about</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/projects?type=.project-residential</loc>
+    <loc>http://currentcon.com/project/6</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/services</loc>
+    <loc>http://currentcon.com/project/2</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/remodel</loc>
+    <loc>http://currentcon.com/projects</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/5</loc>
+    <loc>http://currentcon.com/projects?type=.project-multi-unit</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/contact</loc>
+    <loc>http://currentcon.com/project/8</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/4</loc>
+    <loc>http://currentcon.com/projects?type=.project-residential</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/3</loc>
+    <loc>http://currentcon.com/project/5</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/soft-story</loc>
+    <loc>http://currentcon.com/project/1</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/7</loc>
+    <loc>http://currentcon.com/project/7</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/11</loc>
+    <loc>http://currentcon.com/project/9</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/8</loc>
+    <loc>http://currentcon.com/services</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/12</loc>
+    <loc>http://currentcon.com/projects?type=.project-commercial</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/projects?type=.project-multi-unit</loc>
+    <loc>http://currentcon.com/project/13</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/projects</loc>
+    <loc>http://currentcon.com/project/10</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/projects?type=.project-commercial</loc>
+    <loc>http://currentcon.com/project/11</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/9</loc>
+    <loc>http://currentcon.com/estimate</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/estimate</loc>
+    <loc>http://currentcon.com/project/12</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/10</loc>
+    <loc>http://currentcon.com/blog</loc>
   </url>
   <url>
-    <loc>https://currentcon.com/project/6</loc>
+    <loc>http://currentcon.com/post/1</loc>
+  </url>
+  <url>
+    <loc>http://currentcon.com/post/3</loc>
+  </url>
+  <url>
+    <loc>http://currentcon.com/post/2</loc>
   </url>
 </urlset>
-<!--<guid value="43924e0e-255b-44df-aee5-dcfd06da95a7" />-->
+<!--<guid value="96848749-c6b6-4b44-835c-d595c2d48d05" />-->
 <!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->

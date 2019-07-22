@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Allow: /sitemap.htm
-Sitemap: https://currentcon.com/sitemap.xml
+Sitemap: http://currentcon.com/sitemap.xml
