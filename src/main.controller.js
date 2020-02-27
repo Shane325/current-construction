@@ -7,6 +7,12 @@ const config = require('./config/config')
 const homeConfig = require('./config/home')
 const aboutConfig = require('./config/about')
 const servicesConfig = require('./config/services')
+const service1Config = require('./config/service1')
+const service2Config = require('./config/service2')
+const service3Config = require('./config/service3')
+const service4Config = require('./config/service4')
+const service5Config = require('./config/service5')
+const service6Config = require('./config/service6')
 const estimateConfig = require('./config/estimate')
 const contactConfig = require('./config/contact')
 const projectsConfig = require('./config/projects')
@@ -78,6 +84,118 @@ module.exports.getServices = (req, res) => {
     pageDescription: servicesConfig.pageDescription,
     state: servicesConfig.state,
     title: servicesConfig.title,
+    projects: projectsConfig.projects
+  })
+}
+
+/*
+ * Return Service1 page
+ *
+ * @returns - renders service1 page
+ */
+module.exports.getService1 = (req, res) => {
+  res.render('../views/pages/service1', {
+    css: config.lib.css,
+    js: config.lib.js,
+    assets: config.assets,
+    pageTitle: service1Config.pageTitle,
+    pageDescription: service1Config.pageDescription,
+    state: service1Config.state,
+    title: service1Config.title,
+    projects: projectsConfig.projects
+  })
+}
+
+/*
+ * Return Service2 page
+ *
+ * @returns - renders service2 page
+ */
+module.exports.getService2 = (req, res) => {
+  res.render('../views/pages/service2', {
+    css: config.lib.css,
+    js: config.lib.js,
+    assets: config.assets,
+    pageTitle: service2Config.pageTitle,
+    pageDescription: service2Config.pageDescription,
+    state: service2Config.state,
+    title: service2Config.title,
+    projects: projectsConfig.projects
+  })
+}
+
+
+/*
+ * Return Service3 page
+ *
+ * @returns - renders service3 page
+ */
+module.exports.getService3 = (req, res) => {
+  res.render('../views/pages/service3', {
+    css: config.lib.css,
+    js: config.lib.js,
+    assets: config.assets,
+    pageTitle: service3Config.pageTitle,
+    pageDescription: service3Config.pageDescription,
+    state: service3Config.state,
+    title: service3Config.title,
+    projects: projectsConfig.projects
+  })
+}
+
+
+/*
+ * Return Service4 page
+ *
+ * @returns - renders service4 page
+ */
+module.exports.getService4 = (req, res) => {
+  res.render('../views/pages/service4', {
+    css: config.lib.css,
+    js: config.lib.js,
+    assets: config.assets,
+    pageTitle: service4Config.pageTitle,
+    pageDescription: service4Config.pageDescription,
+    state: service4Config.state,
+    title: service4Config.title,
+    projects: projectsConfig.projects
+  })
+}
+
+
+/*
+ * Return Service5 page
+ *
+ * @returns - renders service5 page
+ */
+module.exports.getService5 = (req, res) => {
+  res.render('../views/pages/service5', {
+    css: config.lib.css,
+    js: config.lib.js,
+    assets: config.assets,
+    pageTitle: service5Config.pageTitle,
+    pageDescription: service5Config.pageDescription,
+    state: service5Config.state,
+    title: service5Config.title,
+    projects: projectsConfig.projects
+  })
+}
+
+
+/*
+ * Return Service6 page
+ *
+ * @returns - renders service6 page
+ */
+module.exports.getService6 = (req, res) => {
+  res.render('../views/pages/service6', {
+    css: config.lib.css,
+    js: config.lib.js,
+    assets: config.assets,
+    pageTitle: service6Config.pageTitle,
+    pageDescription: service6Config.pageDescription,
+    state: service6Config.state,
+    title: service6Config.title,
     projects: projectsConfig.projects
   })
 }
